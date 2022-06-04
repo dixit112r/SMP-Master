@@ -1,0 +1,197 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>SMP</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  <!-- Material Kit CSS -->
+  <link href="{% static 'assets/css/material-dashboard.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="wrapper ">
+    <div class="sidebar" data-color="orange" data-background-color="white">
+      <!--
+      Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+      Tip 2: you can also add an image using data-image tag
+  -->
+      <div class="logo">
+        <a href="#" class="simple-text logo-normal">
+          Stock Market Prediction
+        </a>
+      </div>
+      <div class="sidebar-wrapper">
+        <ul class="nav">
+          <li class="nav-item active  ">
+            <a class="nav-link" href="{% url 'smp:index' %}">
+              <i class="material-icons">dashboard</i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'smp:google' %}">
+              <i class="fab fa-google"></i>
+              <p>Google</p>
+            </a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link" href="{% url 'smp:twitter' %}">
+              <i class="fab fa-twitter"></i>
+              <p>Twitter</p>
+            </a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link" href="{% url 'smp:apple' %}">
+              <i class="fab fa-apple"></i>
+              <p>Apple</p>
+            </a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link" href="{% url 'smp:microsoft' %}">
+              <i class="fab fa-microsoft"></i>
+              <p>Microsoft</p>
+            </a>
+          </li>
+
+          <!-- your sidebar here -->
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <a class="navbar-brand" href="javascript:;">Companies</a>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+            <span class="navbar-toggler-icon icon-bar"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="container-fluid">
+          <!-- Content here -->
+          <div class="row">
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-info card-header-icon">
+                  <div class="card-icon">
+                    <i class="fab fa-google"></i>
+                  </div>
+                  <p class="card-category">Google Stock Price</p>
+                  <h3 class="card-title">{{ google_price }}
+                    <small>$</small>
+                  </h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <a href="{% url 'smp:google' %}">See Prediction</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-info card-header-icon">
+                  <div class="card-icon">
+                    <i class="fab fa-twitter"></i>
+                  </div>
+                  <p class="card-category">Twitter Stock Price</p>
+                  <h3 class="card-title">{{ twitter_price }}
+                    <small>$</small>
+                  </h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <a href="{% url 'smp:twitter' %}">See Prediction</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-info card-header-icon">
+                  <div class="card-icon">
+                    <i class="fab fa-apple"></i>
+                  </div>
+                  <p class="card-category">Apple Stock Price</p>
+                  <h3 class="card-title">{{ apple_price }}
+                    <small>$</small>
+                  </h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <a href="{% url 'smp:apple' %}">See Prediction</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-info card-header-icon">
+                  <div class="card-icon">
+                    <i class="fab fa-microsoft"></i>
+                  </div>
+                  <p class="card-category">Microsoft Stock Price</p>
+                  <h3 class="card-title">{{ microsoft_price }}
+                    <small>$</small>
+                  </h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <a href="{% url 'smp:microsoft' %}">See Prediction</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container-fluid">
+          <nav class="float-left">
+            <ul>
+              <li>
+                <a href="#">
+                  SMP
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright float-right">
+            &copy;
+            <script>
+              document.write(new Date().getFullYear())
+            </script>, made with <i class="material-icons">favorite</i> by
+            <a href="#" target="_blank">Bhardvaj</a>,
+            <a href="#" target="_blank">Kuldeep</a>,
+            <a href="#" target="_blank">Shruti</a>.
+          </div>
+          <!-- your footer here -->
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>

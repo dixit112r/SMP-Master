@@ -1,0 +1,40 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .my-btn 
+        {
+            display: inline-block;
+            background-color: #444444;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+
+        .my-btn:hover 
+        {
+            background-color: #000000;
+        }
+
+        .color-white
+        {
+            color: #ffffff;
+        }
+    </style>
+{% endblock %}
+
+{% block branding %}
+    <div class="logo">
+        <a href="#" class="simple-text logo-normal">
+        Stock Market Prediction
+        </a>
+        {% if user.is_authenticated %}
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="{% url 'smp:getdataFromWeb' %}" class="my-btn">Update Databse</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-forward color-white"></i><i class="fas fa-forward color-white"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="{% url 'smp:createModel' %}" class="my-btn">Create Model</a>
+        {% endif %}
+    </div>
+{% endblock %}
